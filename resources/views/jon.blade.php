@@ -1,1 +1,1 @@
-<h1>kenapa yg rizki ga bisa ya jon???</h1>
+<h1>oyy risss</h1>
