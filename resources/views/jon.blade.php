@@ -1,1 +1,1 @@
-<h1>jon yang rizki error gabisa</h1>
+<h1>kenapa yg rizki ga bisa ya jon???</h1>
