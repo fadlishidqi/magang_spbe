@@ -15,6 +15,3 @@
         </div>
     </div>
 </x-app-layout>
-
-
-<h1>cek pesan</h1>
