@@ -15,6 +15,7 @@
     </style>
 </head>
 
+<!-- HEADER NAVBAR -->
 <body class="font-sans antialiased">
     <header class="flex justify-between items-center p-4 bg-white shadow">
         <div class="flex items-center space-x-3 ml-10"> <!-- ini muti -->
@@ -33,10 +34,14 @@
             <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-md shadow-2xl">Login</a>
         </nav>
     </header>
+
+    <!-- CONTENT -->
     <section class="bg-cover bg-center text-white text-center p-20" style="background-image: url('/path/to/your/background/image.jpg');">
         <h1 class="text-4xl font-bold">Manajemen Layanan SPBE Kota Pekalongan</h1>
         <p class="mt-4 max-w-2xl mx-auto">Portal layanan yang bertujuan untuk meningkatkan efisiensi dan kualitas kinerja layanan. Dengan mengadopsi teknologi digital, sistem ini menyediakan solusi terpadu yang mempermudah akses dan meningkatkan transparansi layanan pemerintahan.</p>
     </section>
+
+    <!-- SEARCH BAR -->
     <section class="my-8 max-w-4xl mx-auto text-center">
     <div class="relative inline-block">
         <input type="text" placeholder="Cari Layanan..." class="w-56 sm:w-64 p-3 pl-10 pr-10 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
@@ -45,6 +50,8 @@
         </div>
         <img src="{{ asset('path/to/search-background.jpg') }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover rounded-full">
     </div>
+
+    <!-- CARD BUTTON -->
     <div class="flex justify-between mt-4 space-x-4">
         <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
             <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-4 ml-2">
@@ -70,6 +77,7 @@
     </div>
 </section>
 
+    <!-- FOOTER -->
     <footer class="bg-gray-100 p-8 text-center">
         <p>DISKOMINFO Kota Pekalongan</p>
         <p>Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
