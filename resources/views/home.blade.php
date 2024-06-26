@@ -43,12 +43,11 @@
 
     <!-- SEARCH BAR -->
     <section class="my-8 max-w-4xl mx-auto text-center">
-    <div class="relative inline-block">
-        <input type="text" placeholder="Cari Layanan..." class="w-56 sm:w-64 p-3 pl-10 pr-10 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
-            <img src="{{ asset('path/to/magnifier-icon.png') }}" alt="Search Icon" class="w-5 h-5 text-gray-400">
+    <div class="relative inline-block w-2/3 sm:w-1/2 lg:w-2/3">
+        <input type="text" placeholder="Cari Layanan..." class="w-full p-2 pl-4 pr-12 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+            <img src="{{ asset('images/search.png') }}" alt="Search Icon" class="w-5 h-5 text-gray-400">
         </div>
-        <img src="{{ asset('path/to/search-background.jpg') }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover rounded-full">
     </div>
 
     <!-- CARD BUTTON -->
@@ -56,21 +55,21 @@
         <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
             <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-4 ml-2">
             <div class="text-left ml-2">
-                <h2 class="text-2xl font-semibold">Layanan</h2>
+                <h2 class="text-2xl font-bold">Layanan</h2>
                 <p class="mt-2">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
             </div>
         </div>
         <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
             <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-4 ml-2">
             <div class="text-left ml-2">
-                <h2 class="text-2xl font-semibold">Pelaporan</h2>
+                <h2 class="text-2xl font-bold">Pelaporan</h2>
                 <p class="mt-2">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
             </div>
         </div>
         <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
             <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-4 ml-2">
             <div class="text-left ml-2">
-                <h2 class="text-2xl font-semibold">Tracking</h2>
+                <h2 class="text-2xl font-bold">Tracking</h2>
                 <p class="mt-2">Lacak aduan yang telah dilakukan menggunakan tiket unik yang telah diberikan.</p>
             </div>
         </div>
@@ -78,16 +77,36 @@
 </section>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-100 p-8 text-center">
-        <p>DISKOMINFO Kota Pekalongan</p>
-        <p>Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
-        <div class="mt-4">
-            <p>Kontak Kami:</p>
-            <p>📞 (0285) 421243</p>
-            <p>✉️ diskominfo@pekalongankota.go.id</p>
-            <p>🏠 Jl. Majapahit No.5 Pekalongan</p>
+<footer class="bg-gray-100 p-8 text-center sm:text-left">
+    <div class="flex flex-col sm:flex-row items-start sm:items-start justify-between max-w-7xl mx-auto">
+        <div class="flex flex-col items-start mb-4 sm:mb-0">
+            <div class="flex items-center">
+                <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16 mr-4">
+                <div>
+                    <p class="font-bold text-xl">DISKOMINFO</p>
+                    <p class="font-bold text-xl">Kota Pekalongan</p>
+                </div>
+            </div>
+            <p class="text-sm md:text-base mt-4 max-w-sm">Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
         </div>
-    </footer>
+        <div class="flex flex-col items-start mt-4 sm:mt-20 sm:ml-4">
+            <p class="font-semibold text-lg">Kontak Kami:</p>
+            <p style="font-size: 18px;">📞 (0285) 421243</p>
+            <p style="font-size: 18px;">✉️ diskominfo@pekalongankota.go.id</p>
+            <p style="font-size: 18px;">🏠 Jl. Majapahit No.5 Pekalongan</p>
+        </div>
+    </div>
+    <div class="flex items-center justify-start mt-4 sm:ml-20">
+        <img src="{{ asset('images/facebook.png') }}" alt="Small Logo 1" class="h-6 mr-4">
+        <img src="{{ asset('images/x.png') }}" alt="Small Logo 2" class="h-6 mr-4">
+        <img src="{{ asset('images/ig.png') }}" alt="Small Logo 3" class="h-6 mr-4">
+        <img src="{{ asset('images/yutub.png') }}" alt="Small Logo 4" class="h-6 mr-4">
+    </div>
+
+    <div class="mt-8 text-gray-500 text-center">
+        <p>© 2024 Sistem Layanan SPBE, by Diskominfo Kota Pekalongan</p>
+    </div>
+</footer>
     @vite('resources/js/app.js')
 </body>
 </html>
