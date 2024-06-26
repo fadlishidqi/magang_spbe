@@ -31,6 +31,7 @@
         <h1 class="text-4xl font-bold">Manajemen Layanan SPBE Kota Pekalongan</h1>
         <p class="mt-4 max-w-2xl mx-auto">Portal layanan yang bertujuan untuk meningkatkan efisiensi dan kualitas kinerja layanan. Dengan mengadopsi teknologi digital, sistem ini menyediakan solusi terpadu yang mempermudah akses dan meningkatkan transparansi layanan pemerintahan.</p>
     </section>
+    
     <section class="my-8 max-w-4xl mx-auto text-center">
     <div class="relative inline-block">
         <input type="text" placeholder="Cari Layanan..." class="w-56 sm:w-64 p-3 pl-10 pr-10 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
