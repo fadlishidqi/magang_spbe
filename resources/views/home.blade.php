@@ -31,26 +31,39 @@
         <h1 class="text-4xl font-bold">Manajemen Layanan SPBE Kota Pekalongan</h1>
         <p class="mt-4 max-w-2xl mx-auto">Portal layanan yang bertujuan untuk meningkatkan efisiensi dan kualitas kinerja layanan. Dengan mengadopsi teknologi digital, sistem ini menyediakan solusi terpadu yang mempermudah akses dan meningkatkan transparansi layanan pemerintahan.</p>
     </section>
-    <section class="my-8 max-w-4xl mx-auto">
-        <input type="text" placeholder="Cari Layanan..." class="w-full p-4 border rounded mb-8">
-        <div class="flex justify-between space-x-4">
-            <div class="bg-white p-8 rounded shadow text-center w-1/3">
-                <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mx-auto mb-4">
-                <h2 class="text-xl font-semibold">Layanan</h2>
+    <section class="my-8 max-w-4xl mx-auto text-center">
+    <div class="relative inline-block">
+        <input type="text" placeholder="Cari Layanan..." class="w-56 sm:w-64 p-3 pl-10 pr-10 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <img src="{{ asset('path/to/magnifier-icon.png') }}" alt="Search Icon" class="w-5 h-5 text-gray-400">
+        </div>
+        <img src="{{ asset('path/to/search-background.jpg') }}" alt="Background Image" class="absolute inset-0 w-full h-full object-cover rounded-full">
+    </div>
+    <div class="flex justify-between mt-4 space-x-4">
+        <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
+            <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-4 ml-2">
+            <div class="text-left ml-2">
+                <h2 class="text-2xl font-semibold">Layanan</h2>
                 <p class="mt-2">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
             </div>
-            <div class="bg-white p-8 rounded shadow text-center w-1/3">
-                <img src="/path/to/report-icon.png" alt="Pelaporan Icon" class="h-12 mx-auto mb-4">
-                <h2 class="text-xl font-semibold">Pelaporan</h2>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
+            <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-4 ml-2">
+            <div class="text-left ml-2">
+                <h2 class="text-2xl font-semibold">Pelaporan</h2>
                 <p class="mt-2">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
             </div>
-            <div class="bg-white p-8 rounded shadow text-center w-1/3">
-                <img src="/path/to/tracking-icon.png" alt="Tracking Icon" class="h-12 mx-auto mb-4">
-                <h2 class="text-xl font-semibold">Tracking</h2>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg flex-1">
+            <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-4 ml-2">
+            <div class="text-left ml-2">
+                <h2 class="text-2xl font-semibold">Tracking</h2>
                 <p class="mt-2">Lacak aduan yang telah dilakukan menggunakan tiket unik yang telah diberikan.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
     <footer class="bg-gray-100 p-8 text-center">
         <p>DISKOMINFO Kota Pekalongan</p>
         <p>Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
