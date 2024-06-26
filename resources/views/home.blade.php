@@ -36,9 +36,16 @@
     </header>
 
     <!-- CONTENT -->
-    <section class="bg-cover bg-center text-white text-center p-20" style="background-image: url('/path/to/your/background/image.jpg');">
-        <h1 class="text-4xl font-bold">Manajemen Layanan SPBE Kota Pekalongan</h1>
-        <p class="mt-4 max-w-2xl mx-auto">Portal layanan yang bertujuan untuk meningkatkan efisiensi dan kualitas kinerja layanan. Dengan mengadopsi teknologi digital, sistem ini menyediakan solusi terpadu yang mempermudah akses dan meningkatkan transparansi layanan pemerintahan.</p>
+    <section class="bg-cover bg-center text-white text-center">
+        <img src="{{ asset('images/batik.png') }}" class="w-full h-auto lg:w-screen lg:h-screen object-cover">
+        <div class="absolute inset-0 flex flex-col justify-center items-start text-white p-4">
+            <h1 class="ml-20 mt-2 text-6xl font-poppins ">Manajemen Layanan</h1>
+            <h1 class="ml-20 mt-2 text-6xl font-poppins ">SPBE Kota Pekalongan</h1>
+            <p class="ml-20 mt-2 max-w-6xl text-xl font-normal ">Portal layanan yang bertujuan untuk meningkatkan efisiensi</p>
+            <p class="ml-20 mt-2 max-w-6xl text-xl font-normal ">dan kualitas kinerja layanan. Dengan mengadopsi teknologi</p>
+            <p class="ml-20 mt-2 max-w-6xl text-xl font-normal ">digital, sistem ini menyediakan solusi terpadu yang mempermudah</p>
+            <p class="ml-20 mt-2 max-w-6xl text-xl font-normal ">akses dan meningkatkan transparansi layanan pemerintahan</p>
+        </div>
     </section>
 
     <!-- SEARCH BAR -->
