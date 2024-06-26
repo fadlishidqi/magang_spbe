@@ -7,24 +7,30 @@
     <title>Manajemen Layanan SPBE Kota Pekalongan</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
     @vite('resources/css/app.css')
+    <!-- ini muti -->
+    <style>
+        a {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
 
 <body class="font-sans antialiased">
     <header class="flex justify-between items-center p-4 bg-white shadow">
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3 ml-10"> <!-- ini muti -->
             <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16">
             <div class="font-bold font-poppins text-2xl leading-none">
                 <span>DISKOMINFO</span><br>
                 <span class="text-lg leading-tight">Kota Pekalongan</span>
             </div>
         </div>
-
-        <nav class="space-x-4">
-            <a href="#" class="text-gray-800">Beranda</a>
-            <a href="#" class="text-gray-800">Layanan</a>
-            <a href="#" class="text-gray-800">Tracking</a>
-            <a href="#" class="text-gray-800">FAQ</a>
-            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded transition-colors duration-300">Login</a>
+        <!-- ini muti -->
+        <nav class="space-x-16">
+            <a href="#" class="text-gray-800 font-bold text-lg">Beranda</a>
+            <a href="#" class="text-gray-800 font-bold text-lg">Layanan</a>
+            <a href="#" class="text-gray-800 font-bold text-lg">Tracking</a>
+            <a href="#" class="text-gray-800 font-bold text-lg">FAQ</a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-lg shadow-2xl">Login</a>
         </nav>
     </header>
     <section class="bg-cover bg-center text-white text-center p-20" style="background-image: url('/path/to/your/background/image.jpg');">
