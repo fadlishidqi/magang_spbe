@@ -19,25 +19,24 @@
     <header class="flex justify-between items-center p-4 bg-white shadow">
         <div class="flex items-center space-x-3 ml-10"> <!-- ini muti -->
             <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16">
-            <div class="font-bold font-poppins text-2xl leading-none">
+            <div class="font-bold font-poppins text-xl leading-none">
                 <span>DISKOMINFO</span><br>
-                <span class="text-lg leading-tight">Kota Pekalongan</span>
+                <span class="text-md leading-tight">Kota Pekalongan</span>
             </div>
         </div>
         <!-- ini muti -->
         <nav class="space-x-16">
-            <a href="#" class="text-gray-800 font-bold text-lg">Beranda</a>
-            <a href="#" class="text-gray-800 font-bold text-lg">Layanan</a>
-            <a href="#" class="text-gray-800 font-bold text-lg">Tracking</a>
-            <a href="#" class="text-gray-800 font-bold text-lg">FAQ</a>
-            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-lg shadow-2xl">Login</a>
+            <a href="#" class="text-gray-800 font-bold text-md">Beranda</a>
+            <a href="#" class="text-gray-800 font-bold text-md">Layanan</a>
+            <a href="#" class="text-gray-800 font-bold text-md">Tracking</a>
+            <a href="#" class="text-gray-800 font-bold text-md">FAQ</a>
+            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-md shadow-2xl">Login</a>
         </nav>
     </header>
     <section class="bg-cover bg-center text-white text-center p-20" style="background-image: url('/path/to/your/background/image.jpg');">
         <h1 class="text-4xl font-bold">Manajemen Layanan SPBE Kota Pekalongan</h1>
         <p class="mt-4 max-w-2xl mx-auto">Portal layanan yang bertujuan untuk meningkatkan efisiensi dan kualitas kinerja layanan. Dengan mengadopsi teknologi digital, sistem ini menyediakan solusi terpadu yang mempermudah akses dan meningkatkan transparansi layanan pemerintahan.</p>
     </section>
-    
     <section class="my-8 max-w-4xl mx-auto text-center">
     <div class="relative inline-block">
         <input type="text" placeholder="Cari Layanan..." class="w-56 sm:w-64 p-3 pl-10 pr-10 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
