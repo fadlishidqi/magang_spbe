@@ -17,15 +17,14 @@
 
 <!-- HEADER NAVBAR -->
 <body class="font-sans antialiased">
-    <header class="flex justify-between items-center p-4 bg-white shadow">
-        <div class="flex items-center space-x-3 ml-10"> <!-- ini muti -->
+    <header class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white shadow">
+        <div class="flex items-center space-x-3 ml-10">
             <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16">
             <div class="font-bold font-poppins text-xl leading-none">
                 <span>DISKOMINFO</span><br>
                 <span class="text-md leading-tight">Kota Pekalongan</span>
             </div>
         </div>
-        <!-- ini muti -->
         <nav class="space-x-16">
             <a href="#" class="text-gray-800 font-bold text-md">Beranda</a>
             <a href="#" class="text-gray-800 font-bold text-md">Layanan</a>
@@ -114,6 +113,6 @@
         <p>© 2024 Sistem Layanan SPBE, by Diskominfo Kota Pekalongan</p>
     </div>
 </footer>
-    @vite('resources/js/app.js')
+@vite('resources/js/app.js')
 </body>
 </html>
