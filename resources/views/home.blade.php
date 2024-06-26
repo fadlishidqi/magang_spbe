@@ -20,7 +20,7 @@
         </div>
 
         <nav class="space-x-4">
-            <a href="#" class="text-gray-800">Beranda</a>
+            <a href="#" class="text-gray-800"></a>
             <a href="#" class="text-gray-800">Layanan</a>
             <a href="#" class="text-gray-800">Tracking</a>
             <a href="#" class="text-gray-800">FAQ</a>
