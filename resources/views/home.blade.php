@@ -94,35 +94,44 @@
 
     <!-- FOOTER -->
     <footer class="bg-gray-100 p-8 text-center sm:text-left">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col sm:flex-row items-start justify-between">
-                <div class="flex items-start mb-4 sm:mb-0">
-                    <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16 mr-4">
+        <div class="flex flex-col sm:flex-row items-start sm:items-start justify-between max-w-7xl mx-auto">
+            <div class="flex flex-col items-start mb-4 sm:mb-0">
+                <div class="flex items-center">
+                    <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-16 mr-2">
                     <div>
-                        <p class="font-bold text-xl">Dinas Komunikasi dan Informatika</p>
+                        <p class="font-bold text-xl">Dinas Komunikasi dan informatika</p>
                         <p class="font-bold text-xl">Kota Pekalongan</p>
                     </div>
                 </div>
-                <div class="flex flex-col items-start sm:mt-0 sm:ml-4">
-                    <p class="text-sm md:text-base mt-4 max-w-sm">Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
-                </div>
+                <p class="text-sm md:text-base mt-4 max-w-sm">Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
             </div>
-            <div class="flex flex-col items-start mt-4 sm:mt-8">
+
+            <div class="flex flex-col items-start mt-4 sm:mt-20 sm:ml-4">
                 <p class="font-semibold text-lg">Kontak Kami:</p>
-                <p class="contact-item flex items-center"><img src="{{ asset('images/phone.png') }}" alt="Phone Icon" class="h-5 mr-2"> (0285) 421243</p>
-                <p class="contact-item flex items-center"><img src="{{ asset('images/envelope.png') }}" alt="Email Icon" class="h-5 mr-2"> diskominfo@pekalongankota.go.id</p>
-                <p class="contact-item flex items-center"><img src="{{ asset('images/location.png') }}" alt="Address Icon" class="h-5 mr-2"> Jl. Majapahit No.5 Pekalongan</p>
+            
+                <p class="contact-item" style="display: inline-flex; align-items: center;">
+                    <img src="images/phone.png" alt="Phone Icon" class="icon" style="margin-right: 10px;"> (0285) 421243
+                </p>
+
+                <p class="contact-item" style="display: inline-flex; align-items:center">
+                    <img src="images/envelope.png" alt="Email Icon" class="icon" style="margin-right: 10px;"> diskominfo@pekalongankota.go.id
+                </p>
+                
+                <p class="contact-item" style="display: inline-flex; align-items:center">
+                    <img src="images/location.png" alt="Address Icon" class="icon" style="margin-right: 10px;" > Jl. Majapahit No.5 Pekalongan
+                </p>
             </div>
+        </div>
             <div class="flex items-center justify-start mt-4 sm:ml-20">
-                <img src="{{ asset('images/facebook.png') }}" alt="Facebook Icon" class="h-6 mr-4">
-                <img src="{{ asset('images/x.png') }}" alt="X Icon" class="h-6 mr-4">
-                <img src="{{ asset('images/ig.png') }}" alt="Instagram Icon" class="h-6 mr-4">
-                <img src="{{ asset('images/yutub.png') }}" alt="YouTube Icon" class="h-6 mr-4">
+                <img src="{{ asset('images/facebook.png') }}" alt="Small Logo 1" class="h-6 mr-4">
+                <img src="{{ asset('images/x.png') }}" alt="Small Logo 2" class="h-6 mr-4">
+                <img src="{{ asset('images/ig.png') }}" alt="Small Logo 3" class="h-6 mr-4">
+                <img src="{{ asset('images/yutub.png') }}" alt="Small Logo 4" class="h-6 mr-4">
             </div>
-        </div>
-        <div class="mt-8 text-gray-500 text-center">
-            <p>© 2024 Sistem Layanan SPBE, by Dinas komunikasi dan informatika Kota Pekalongan</p>
-        </div>
+
+            <div class="mt-8 text-gray-500 text-center">
+                <p>© 2024 Sistem Layanan SPBE, by Dinas komunikasi dan informatika Kota Pekalongan</p>
+            </div>
     </footer>
 
     @vite('resources/js/app.js')
