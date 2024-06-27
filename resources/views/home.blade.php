@@ -14,26 +14,29 @@
     </style>
 </head>
 <body class="font-sans antialiased">
+    <!-- ini muti -->
     <!-- HEADER NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white shadow">
-        <div class="flex items-center space-x-3 ml-10 md:ml-4">
-            <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-12 md:h-16">
-            <div class="font-bold font-poppins text-lg md:text-xl leading-none">
-                <span class="block text-base md:text-xl">DISKOMINFO</span>
-                <span class="block text-base md:text-xl leading-none">Kota Pekalongan</span>
+                <div class="flex items-center justify-between px-4 md:px-8">
+                <div class="flex items-center space-x-3 ml-10 md:ml-4">
+                    <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-12 md:h-16">
+                    <div class="text-container flex flex-col justify-center text-center font-bold font-poppins leading-tight">
+                        <span class="text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap">DINAS KOMINFO</span>
+                        <span class="text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap">Kota Pekalongan</span>
+                    </div>
+                </div>
             </div>
+            <nav class="ml-44 flex-1 flex justify-start items-center space-x-8 md:space-x-6 lg:space-x-8 xl:space-x-16 hidden md:flex transition-all duration-500">
+                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
+                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Layanan</a>
+                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Pelaporan</a>
+                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Tracking</a>
+                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
+                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white md:px-5 md:py-2 lg:px-10 lg:py-3 rounded-3xl transition-all duration-300 font-bold text-md shadow-2xl">Login</a>
+            </nav>
         </div>
         </div>
-        <nav class="space-x-16 hidden lg:flex">
-            <a href="#" class="text-gray-800 font-bold text-md">Beranda</a>
-            <a href="#" class="text-gray-800 font-bold text-md">Layanan</a>
-            <a href="#" class="text-gray-800 font-bold text-md">Pelaporan</a>
-            <a href="#" class="text-gray-800 font-bold text-md">Tracking</a>
-            <a href="#" class="text-gray-800 font-bold text-md">FAQ</a>
-            <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-md shadow-2xl">Login</a>
-        </nav>
-        </div>
-        <button class="lg:hidden text-gray-800" id="menu-btn">
+        <button class="md:hidden text-gray-800" id="menu-btn">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
