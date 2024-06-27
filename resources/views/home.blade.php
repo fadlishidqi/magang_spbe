@@ -28,6 +28,7 @@
         <nav class="space-x-16">
             <a href="#" class="text-gray-800 font-bold text-md">Beranda</a>
             <a href="#" class="text-gray-800 font-bold text-md">Layanan</a>
+            <a href="#" class="text-gray-800 font-bold text-md">Pelaporan</a>
             <a href="#" class="text-gray-800 font-bold text-md">Tracking</a>
             <a href="#" class="text-gray-800 font-bold text-md">FAQ</a>
             <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-10 py-3 rounded-3xl transition-colors duration-300 font-bold text-md shadow-2xl">Login</a>
