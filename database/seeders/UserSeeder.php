@@ -24,11 +24,25 @@ class UserSeeder extends Seeder
         ]);
         $admin->assignRole('admin');
 
+        $dinas = User::create([
+            'name' => 'Jon',
+            'email' => 'jon@din.com',
+            'password' => bcrypt('jon'),
+        ]);
+        $dinas->assignRole('pegawai dinas');
+
         $masyarakat = User::create([
-            'name' => 'kiki',
-            'email' => 'kiki@spbe.com',
+            'name' => 'Kiki',
+            'email' => 'kiki@mas.com',
             'password' => bcrypt('kiki'),
         ]);
         $masyarakat->assignRole('masyarakat');
+
+        $individu = User::create([
+            'name' => 'Riezqi',
+            'email' => 'riez@indi.com',
+            'password' => bcrypt('riez'),
+        ]);
+        $individu->assignRole('pegawai individu');
     }
 }
