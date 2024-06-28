@@ -27,11 +27,11 @@
                 </div>
             </div>
             <nav class="ml-80 flex-1 justify-start items-center space-x-8 md:space-x-6 lg:space-x-8 xl:space-x-16 hidden md:flex transition-all duration-500">
-            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
+            <a href="/" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
             <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Layanan</a>
             <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Pelaporan</a>
             <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Tracking</a>
-            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
+            <a href="/faq" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
             @auth
                 <div class="relative">
                     <button class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500" id="user-menu-button">

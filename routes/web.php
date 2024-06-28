@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FaqController;
 
 Route::get('/', function () {
     return view('home');
@@ -32,6 +33,8 @@ Route::get('pegawaiDinas', function () {
 Route::get('pegawaiIndividu', function () {
     return view('home');
 })->middleware(['auth', 'verified', 'role:pegawai individu']);
+
+Route::get('/faq', [FaqController::class, 'index']);
 
 
 require __DIR__.'/auth.php';
