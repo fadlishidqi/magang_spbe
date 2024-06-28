@@ -18,19 +18,20 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('admin', function () {
-    return '<h1>Hello admin</h1>';
+    return view('dashboard');
 })->middleware(['auth', 'verified', 'role:admin']);
 
 Route::get('masyarakat', function () {
-    return '<h1>Hello Rakyat</h1>';
-})->middleware(['auth', 'verified', 'role:admin|masyarakat']);
+    return view('home');
+})->middleware(['auth', 'verified', 'role:masyarakat']);
 
 Route::get('pegawaiDinas', function () {
-    return '<h1>Hello Dinas</h1>';
-})->middleware(['auth', 'verified', 'role:admin|pegawai dinas']);
+    return view('home');
+})->middleware(['auth', 'verified', 'role:pegawai dinas']);
 
 Route::get('pegawaiIndividu', function () {
-    return '<h1>Hello Pegawai</h1>';
-})->middleware(['auth', 'verified', 'role:admin|pegawai individu']);
+    return view('home');
+})->middleware(['auth', 'verified', 'role:pegawai individu']);
+
 
 require __DIR__.'/auth.php';

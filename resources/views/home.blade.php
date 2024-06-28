@@ -27,15 +27,47 @@
                 </div>
             </div>
             <nav class="ml-80 flex-1 justify-start items-center space-x-8 md:space-x-6 lg:space-x-8 xl:space-x-16 hidden md:flex transition-all duration-500">
-                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
-                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Layanan</a>
-                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Pelaporan</a>
-                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Tracking</a>
-                <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
+            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
+            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Layanan</a>
+            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Pelaporan</a>
+            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Tracking</a>
+            <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
+            @auth
+                <div class="relative">
+                    <button class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500" id="user-menu-button">
+                        {{ Auth::user()->name }}
+                    </button>
+                    <div id="user-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 hidden">
+                        <a href="{{ route('logout') }}" class="block px-4 py-2 text-gray-700 hover:bg-gray-100" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+            @else
                 <a href="/login" class="bg-blue-500 hover:bg-blue-600 text-white md:px-5 md:py-2 lg:px-10 lg:py-3 rounded-3xl transition-all duration-300 font-bold text-md shadow-2xl">Login</a>
-            </nav>
-        </div>
-        </div>
+            @endauth
+        </nav>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const userMenuButton = document.getElementById('user-menu-button');
+                const userMenu = document.getElementById('user-menu');
+
+                userMenuButton.addEventListener('click', function() {
+                    userMenu.classList.toggle('hidden');
+                });
+
+                // Optional: Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!userMenuButton.contains(event.target) && !userMenu.contains(event.target)) {
+                        userMenu.classList.add('hidden');
+                    }
+                });
+            });
+        </script>
+
         <button class="md:hidden text-gray-800" id="menu-btn">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
