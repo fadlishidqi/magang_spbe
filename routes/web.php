@@ -21,4 +21,16 @@ Route::get('admin', function () {
     return '<h1>Hello admin</h1>';
 })->middleware(['auth', 'verified', 'role:admin']);
 
+Route::get('masyarakat', function () {
+    return '<h1>Hello Rakyat</h1>';
+})->middleware(['auth', 'verified', 'role:admin|masyarakat']);
+
+Route::get('pegawaiDinas', function () {
+    return '<h1>Hello Dinas</h1>';
+})->middleware(['auth', 'verified', 'role:admin|pegawai dinas']);
+
+Route::get('pegawaiIndividu', function () {
+    return '<h1>Hello Pegawai</h1>';
+})->middleware(['auth', 'verified', 'role:admin|pegawai individu']);
+
 require __DIR__.'/auth.php';

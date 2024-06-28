@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\View\View;
 
 class AuthenticatedSessionController extends Controller
@@ -28,7 +29,25 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (Auth::user()->hasRole('admin')) {
+            return redirect()->to('admin');
+        }
+
+        if (Auth::user()->hasRole('masyarakat')) {
+            return redirect()->to('masyarakat');
+        }
+
+        if (Auth::user()->hasRole('pegawai dinas')) {
+            return redirect()->to('pegawaiDinas');
+        }
+
+        if (Auth::user()->hasRole('pegawai individu')) {
+            return redirect()->to('pegawaiIndividu');
+        }
+    
         return redirect()->intended(route('dashboard', absolute: false));
+        
+        
     }
 
     /**

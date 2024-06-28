@@ -14,25 +14,25 @@
     </style>
 </head>
 <body class="font-sans antialiased">
-    <!-- ini muti -->
+   
     <!-- HEADER NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-10 flex justify-between items-center p-4 bg-white shadow">
                 <div class="flex items-center justify-between px-4 md:px-8">
                 <div class="flex items-center space-x-3 ml-10 md:ml-4">
                     <img src="{{ asset('images/logo_pemkot.png') }}" alt="Logo" class="h-12 md:h-16">
-                    <div class="text-container flex flex-col justify-center text-center font-bold font-poppins leading-tight">
+                    <div class="text-container flex flex-col justify-center text-left font-bold font-poppins leading-tight">
                         <span class="text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap">DINAS KOMINFO</span>
                         <span class="text-xs sm:text-sm md:text-lg lg:text-xl whitespace-nowrap">Kota Pekalongan</span>
                     </div>
                 </div>
             </div>
-            <nav class="ml-44 flex-1 flex justify-start items-center space-x-8 md:space-x-6 lg:space-x-8 xl:space-x-16 hidden md:flex transition-all duration-500">
+            <nav class="ml-80 flex-1 justify-start items-center space-x-8 md:space-x-6 lg:space-x-8 xl:space-x-16 hidden md:flex transition-all duration-500">
                 <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Beranda</a>
                 <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Layanan</a>
                 <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Pelaporan</a>
                 <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">Tracking</a>
                 <a href="#" class="text-gray-800 font-bold text-md lg:text-lg md:text-sm transition-all duration-500">FAQ</a>
-                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white md:px-5 md:py-2 lg:px-10 lg:py-3 rounded-3xl transition-all duration-300 font-bold text-md shadow-2xl">Login</a>
+                <a href="/login" class="bg-blue-500 hover:bg-blue-600 text-white md:px-5 md:py-2 lg:px-10 lg:py-3 rounded-3xl transition-all duration-300 font-bold text-md shadow-2xl">Login</a>
             </nav>
         </div>
         </div>
@@ -41,8 +41,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
-    </header>
-      
+    </header>     
 
     <!-- CONTENT -->
     <section class="relative bg-cover bg-center text-white text-center">
@@ -53,7 +52,6 @@
         <p class="mt-6 max-w-2xl text-base lg:text-xl font-normal text-left">Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
     </div>
 </section>
-
 
     <!-- SEARCH BAR -->
     <section class="my-8 max-w-4xl mx-auto text-center">
@@ -76,15 +74,15 @@
                 </div>
             </div>
             <div class="card bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-4 mx-auto">
-                <div class="text-left sm:text-center">
+                <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-4 ml-2 mx-auto">
+                <div class="text-left sm:text-left">
                     <h2 class="text-2xl font-bold">Pelaporan</h2>
                     <p class="mt-2">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
                 </div>
             </div>
             <div class="card bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-4 mx-auto">
-                <div class="text-left sm:text-center">
+                <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-4 ml-2 mx-auto">
+                <div class="text-left sm:text-left">
                     <h2 class="text-2xl font-bold">Tracking</h2>
                     <p class="mt-2">Lacak aduan yang telah dilakukan menggunakan tiket unik yang telah diberikan.</p>
                 </div>
@@ -128,12 +126,10 @@
                 <img src="{{ asset('images/ig.png') }}" alt="Small Logo 3" class="h-6 mr-4">
                 <img src="{{ asset('images/yutub.png') }}" alt="Small Logo 4" class="h-6 mr-4">
             </div>
-
             <div class="mt-8 text-gray-500 text-center">
                 <p>© 2024 Sistem Layanan SPBE, by Dinas komunikasi dan informatika Kota Pekalongan</p>
             </div>
     </footer>
-
     @vite('resources/js/app.js')
 
 </body>
