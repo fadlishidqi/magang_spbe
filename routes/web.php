@@ -1,16 +1,31 @@
 <?php
 
+use App\Http\Controllers\ApprovalController;
+use App\Http\Controllers\FaqController;
+use App\Http\Controllers\LaporanController;
+use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FaqController;
+
 
 Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->prefix('/admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('admin.dashboard');
+    Route::resource("approval", ApprovalController::class);
+
+    Route::patch('/users/{user}/approve', [ApprovalController::class, 'approve'])->name('users.approve');
+    Route::patch('/users/{user}/reject', [ApprovalController::class, 'reject'])->name('users.reject');
+
+    Route::resource("laporan", LaporanController::class);
+    Route::resource("layanan", LayananController::class);
+    Route::resource("faqs", FaqController::class);
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -18,23 +33,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('admin', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified', 'role:admin']);
+Route::middleware('web')->post('/register', 'App\Http\Controllers\Auth\RegisteredUserController@store')->name('register');
 
-Route::get('masyarakat', function () {
-    return view('home');
-})->middleware(['auth', 'verified', 'role:masyarakat']);
-
-Route::get('pegawaiDinas', function () {
-    return view('home');
-})->middleware(['auth', 'verified', 'role:pegawai dinas']);
-
-Route::get('pegawaiIndividu', function () {
-    return view('home');
-})->middleware(['auth', 'verified', 'role:pegawai individu']);
-
-Route::get('/faq', [FaqController::class, 'index']);
-
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
