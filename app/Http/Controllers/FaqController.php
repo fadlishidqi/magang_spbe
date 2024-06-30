@@ -7,10 +7,18 @@ use Illuminate\Http\Request;
 
 class FaqController extends Controller
 {
+    // Metode untuk pengguna biasa
+    public function showFaqs()
+    {
+        $faqs = Faq::all();
+        return view('faq.faq', compact('faqs')); // Mengarahkan ke resources/views/faq/faq.blade.php
+    }
+
+    // Metode untuk admin
     public function index()
     {
-        $faqs = FAQ::all();
-        return view('admin.faq.index', compact('faqs'));
+        $faqs = Faq::all();
+        return view('admin.faq.index', compact('faqs')); // Mengarahkan ke resources/views/admin/faq/index.blade.php
     }
 
     public function create()
@@ -25,7 +33,7 @@ class FaqController extends Controller
             'answer' => 'required|string',
         ]);
 
-        FAQ::create([
+        Faq::create([
             'pertanyaan' => $request->question,
             'jawaban' => $request->answer
         ]);
@@ -33,12 +41,12 @@ class FaqController extends Controller
         return redirect()->route('faqs.index')->with('success', 'FAQ created successfully.');
     }
 
-    public function edit(FAQ $faq)
+    public function edit(Faq $faq)
     {
         return view('admin.faq.edit', compact('faq'));
     }
 
-    public function update(Request $request, FAQ $faq)
+    public function update(Request $request, Faq $faq)
     {
         $request->validate([
             'question' => 'required|string|max:255',
@@ -53,7 +61,7 @@ class FaqController extends Controller
         return redirect()->route('faqs.index')->with('success', 'FAQ updated successfully.');
     }
 
-    public function destroy(FAQ $faq)
+    public function destroy(Faq $faq)
     {
         $faq->delete();
 

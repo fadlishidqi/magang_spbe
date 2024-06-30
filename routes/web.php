@@ -6,11 +6,12 @@ use App\Http\Controllers\LaporanController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [HomeController::class, 'index']);
+
+Route::get('/faq', [FaqController::class, 'showFaqs'])->name('faq.show');
 
 Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::get('/dashboard', function () {
