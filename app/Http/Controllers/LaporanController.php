@@ -54,7 +54,7 @@ class LaporanController extends Controller
     // Metode untuk pengguna
     public function create()
     {
-        return view('laporan.create');
+        return view('laporan.index');
     }
 
     public function store(Request $request)
