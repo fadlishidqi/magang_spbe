@@ -13,6 +13,8 @@ Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/faq', [FaqController::class, 'showFaqs'])->name('faq.show');
 
+Route::get('/admin/faqs', [FaqController::class, 'index'])->name('faqs.index');
+
 Route::middleware('auth')->prefix('/admin')->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');

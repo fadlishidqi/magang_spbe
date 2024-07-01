@@ -21,6 +21,18 @@
                             style="background-color: blue">Add FAQ</a>
                     </div>
 
+                    <!-- Filter FAQ berdasarkan kategori -->
+                    <form method="GET" action="{{ route('faqs.index') }}" class="mb-4">
+                        <label for="kategori" class="block text-sm font-medium text-gray-700">Filter by Category</label>
+                        <select name="kategori" id="kategori" class="mt-1 p-2 w-full border rounded">
+                            <option value="">All</option>
+                            <option value="Layanan">Layanan</option>
+                            <option value="Laporan">Laporan</option>
+                            <option value="Tracking">Tracking</option>
+                        </select>
+                        <button type="submit" class="btn bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">Filter</button>
+                    </form>
+
                     <table class="divide-y divide-gray-200 text-center w-full">
                         <thead class="bg-gray-50">
                             <tr>
@@ -30,6 +42,9 @@
                                 <th
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Answer</th>
+                                <th
+                                    class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                    Category</th>
                                 <th
                                     class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                     Actions</th>
@@ -43,6 +58,9 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{ $faq->jawaban }}</div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        <div class="text-sm text-gray-900">{{ $faq->kategori }}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
                                         <a href="{{ route('faqs.edit', $faq->id) }}"

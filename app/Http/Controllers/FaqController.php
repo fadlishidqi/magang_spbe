@@ -8,18 +8,30 @@ use Illuminate\Http\Request;
 class FaqController extends Controller
 {
     // Metode untuk pengguna biasa
-    public function showFaqs()
+    public function showFaqs(Request $request)
     {
+    $kategori = $request->query('kategori');
+    if ($kategori) {
+        $faqs = Faq::where('kategori', $kategori)->get();
+    } else {
         $faqs = Faq::all();
-        return view('faq.faq', compact('faqs')); // Mengarahkan ke resources/views/faq/faq.blade.php
+    }
+    return view('faq.faq', compact('faqs')); // Mengarahkan ke resources/views/faq/faq.blade.php
     }
 
     // Metode untuk admin
-    public function index()
+    public function index(Request $request)
     {
-        $faqs = Faq::all();
-        return view('admin.faq.index', compact('faqs')); // Mengarahkan ke resources/views/admin/faq/index.blade.php
+    $query = Faq::query();
+    
+    if ($request->filled('kategori')) {
+        $query->where('kategori', $request->kategori);
     }
+
+    $faqs = $query->get();
+    return view('admin.faq.index', compact('faqs'));
+    }
+    
 
     public function create()
     {
@@ -28,17 +40,19 @@ class FaqController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            'question' => 'required|string|max:255',
-            'answer' => 'required|string',
-        ]);
+    $request->validate([
+        'question' => 'required|string|max:255',
+        'answer' => 'required|string',
+        'kategori' => 'required|string'
+    ]);
 
-        Faq::create([
-            'pertanyaan' => $request->question,
-            'jawaban' => $request->answer
-        ]);
+    Faq::create([
+        'pertanyaan' => $request->question,
+        'jawaban' => $request->answer,
+        'kategori' => $request->kategori
+    ]);
 
-        return redirect()->route('faqs.index')->with('success', 'FAQ created successfully.');
+    return redirect()->route('faqs.index')->with('success', 'FAQ created successfully.');
     }
 
     public function edit(Faq $faq)
@@ -48,17 +62,19 @@ class FaqController extends Controller
 
     public function update(Request $request, Faq $faq)
     {
-        $request->validate([
-            'question' => 'required|string|max:255',
-            'answer' => 'required|string',
-        ]);
+    $request->validate([
+        'question' => 'required|string|max:255',
+        'answer' => 'required|string',
+        'kategori' => 'required|string'
+    ]);
 
-        $faq->update([
-            'pertanyaan' => $request->question,
-            'jawaban' => $request->answer
-        ]);
+    $faq->update([
+        'pertanyaan' => $request->question,
+        'jawaban' => $request->answer,
+        'kategori' => $request->kategori
+    ]);
 
-        return redirect()->route('faqs.index')->with('success', 'FAQ updated successfully.');
+    return redirect()->route('faqs.index')->with('success', 'FAQ updated successfully.');
     }
 
     public function destroy(Faq $faq)

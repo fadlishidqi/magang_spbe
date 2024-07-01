@@ -9,5 +9,5 @@ class Faq extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['pertanyaan', 'jawaban'];
+    protected $fillable = ['pertanyaan', 'jawaban', 'kategori'];
 }
