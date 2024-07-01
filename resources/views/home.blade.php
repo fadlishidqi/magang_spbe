@@ -184,29 +184,29 @@
     </section>
 
     <!-- CARD BUTTON -->
-    <section class="my-8 max-w-4xl mx-auto text-center">
-        <div class="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0 items-center">
-            <div class="card bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-4 ml-2 mx-auto">
+    <section class="my-16 max-w-6xl mx-auto text-center">
+        <div class="flex flex-col md:flex-row md:space-x-16 space-y-4 md:space-y-0 items-center">
+            <a href="URL_Layanan" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
+                <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-10 mx-auto ml-2">
                 <div class="text-left sm:text-left">
                     <h2 class="text-2xl font-bold font-poppins">Layanan</h2>
                     <p class="mt-2 font-poppins">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
                 </div>
-            </div>
-            <div class="card bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-4 ml-2 mx-auto">
+            </a>
+            <a href="URL_Pelaporan" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
+                <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-10 mx-auto ml-2">
                 <div class="text-left sm:text-left">
                     <h2 class="text-2xl font-bold font-poppins">Pelaporan</h2>
                     <p class="mt-2 font-poppins">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
                 </div>
-            </div>
-            <div class="card bg-white p-8 rounded-xl shadow-lg max-w-md mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-4 ml-2 mx-auto">
+            </a>
+            <a href="URL_Tracking" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
+                <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-10 mx-auto ml-2">
                 <div class="text-left sm:text-left">
                     <h2 class="text-2xl font-bold font-poppins">Tracking</h2>
                     <p class="mt-2 font-poppins">Lacak aduan yang telah dilakukan menggunakan tiket unik yang telah diberikan.</p>
                 </div>
-            </div>
+            </a>
         </div>
     </section>
 
