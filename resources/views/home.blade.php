@@ -240,16 +240,35 @@
                 </p>
             </div>
         </div>
-            <div class="flex items-center justify-start mt-4 sm:ml-8 gap-x-4 sm:gap-x-6">
-                <img src="{{ asset('images/facebook.png') }}" alt="Small Logo 1" class="h-6">
-                <img src="{{ asset('images/x.png') }}" alt="Small Logo 2" class="h-6">
-                <img src="{{ asset('images/ig.png') }}" alt="Small Logo 3" class="h-6">
-                <img src="{{ asset('images/yutub.png') }}" alt="Small Logo 4" class="h-6">
+            <div class="mt-4">
+                <ul class="flex items-start space-x-4 ml-0 sm:ml-10">
+                    <li>
+                        <a href="#" class="text-2xl">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-2xl">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-2xl">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-2xl">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
             </div>
             <div class="mt-8 text-gray-500 text-center font-poppins">
                 <p>© 2024 Sistem Layanan SPBE, by Dinas komunikasi dan informatika Kota Pekalongan</p>
             </div>
     </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     @vite('resources/js/app.js')
 </body>
 </html>
