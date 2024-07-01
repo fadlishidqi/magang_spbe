@@ -1,10 +1,12 @@
+<!-- resources/views/faq/faq.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manajemen Layanan SPBE Kota Pekalongan</title>
+    <title>Frequently Asked Questions</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-PoQgnD+vMxwXQf2nx5nQZQ3Hg1K6qT+ly6wTFBo1hApKsyw4iP29XSq0O0jZt4QKlVDkB7w64+GuA0jQ/o8cZA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -80,13 +82,13 @@
         </div>
         <ul id="navList" class="md:flex md:items-center absolute md:static bg-white w-full left-0 md:w-auto md:py-0 py-4 md:pl-0 pl-7 top-[-400px] transition-all ease-in duration-500 opacity-0 md:opacity-100 z-10">
             <li class="mx-4 my-6 md:my-0">
-                <a href="#" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Beranda</a>
+                <a href="/" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Beranda</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a href="#" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Layanan</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="/laporan" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Pelaporan</a>
+                <a href="{{ route('laporan.create') }}" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Pelaporan</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a href="#" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Tracking</a>
@@ -162,44 +164,167 @@
         }
     </script>
 
-    <!-- FORM PELAPORAN -->
-    <section class="container mx-auto mt-8">
-        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow">
-            <h1 class="text-2xl font-bold mb-8">Sampaikan laporan</h1>
-            @if (session('success'))
-                <div class="alert alert-success">
-                    {{ session('success') }}
-                </div>
-            @endif
-            <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-3">
-                    <label for="judul" class="form-label">Judul laporan *</label>
-                    <input type="text" class="form-control" id="judul" name="judul" required>
-                </div>
-                <div class="mb-3">
-                    <label for="tanggal" class="form-label">Tanggal Pelaporan *</label>
-                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
-                </div>
-                <div class="mb-3">
-                    <label for="isi" class="form-label">Isi laporan *</label>
-                    <textarea class="form-control" id="isi" name="isi" rows="3" required></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="kategori" class="form-label">Kategori</label>
-                    <input type="text" class="form-control" id="kategori" name="kategori">
-                </div>
-                <div class="mb-3">
-                    <label for="file_pendukung" class="form-label">File Pendukung</label>
-                    <input type="file" class="form-control" id="file_pendukung" name="file_pendukung">
-                </div>
-                <button type="submit" class="btn btn-primary">Kirim</button>
-            </form>
+<!-- FAQ SECTION -->
+<section class="mx-4 sm:mx-10 lg:mx-20">
+    <div class="max-w-6xl mx-auto py-10">
+        <div class="heading text-center mb-8">
+            <h1 class="text-4xl font-bold mb-2">Frequently Asked Questions</h1>
+            <p class="mb-4">Layanan SPBE Pemerintah Kota Pekalongan</p>
         </div>
-    </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-100 p-8 text-left">
+        <div class="flex flex-col md:flex-row justify-between">
+            <!-- Kolom Kategori -->
+            <div class="w-full md:w-auto mb-6 md:mb-0 md:mr-8">
+                <div class="space-y-6">
+                    <button class="flex items-center p-4 bg-white rounded-lg shadow w-full" onclick="filterFAQ('Layanan')">
+                        <div class="flex-shrink-0 mr-4">
+                            <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422A12.083 12.083 0 0118 12c0 4.418-3.582 8-8 8s-8-3.582-8-8c0-.379.034-.753.098-1.12L12 14z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium">Layanan</h3>
+                        </div>
+                    </button>
+                    <button class="flex items-center p-4 bg-white rounded-lg shadow w-full" onclick="filterFAQ('Laporan')">
+                        <div class="flex-shrink-0 mr-4">
+                            <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16h6M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium">Laporan</h3>
+                        </div>
+                    </button>
+                    <button class="flex items-center p-4 bg-white rounded-lg shadow w-full" onclick="filterFAQ('Tracking')">
+                        <div class="flex-shrink-0 mr-4">
+                            <svg class="w-8 h-8 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2M12 7h3m0 0l3 3m-3-3l-3 3m-9 4h12m0 0l-3 3m3-3l3 3M3 19h12M9 17v2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-medium">Tracking</h3>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Kolom Pertanyaan dan Jawaban -->
+            <div class="flex-grow bg-white p-6 rounded-lg shadow">
+                <div class="space-y-4">
+                    <div class="faq-item" data-category="Layanan">
+                        <h2 class="text-2xl font-bold mb-4 mt-4">Layanan</h2>
+                        @foreach ($faqs->where('kategori', 'Layanan') as $item)
+                            <div>
+                                <button
+                                    class="w-full flex justify-between items-center text-left text-xl font-semibold py-2 transition-all duration-300"
+                                    onclick="toggleAnswer('{{ $item->id }}')">
+                                    <span>{{ $item->pertanyaan }}</span>
+                                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                                </button>
+                                <div id="{{ $item->id }}" class="hidden text-gray-600">
+                                    <p>{{ $item->jawaban }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="faq-item" data-category="Laporan">
+                        <h2 class="text-2xl font-bold mb-4">Laporan</h2>
+                        @foreach ($faqs->where('kategori', 'Laporan') as $item)
+                            <div>
+                                <button
+                                    class="w-full flex justify-between items-center text-left text-xl font-semibold py-2 transition-all duration-300"
+                                    onclick="toggleAnswer('{{ $item->id }}')">
+                                    <span>{{ $item->pertanyaan }}</span>
+                                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                                </button>
+                                <div id="{{ $item->id }}" class="hidden text-gray-600">
+                                    <p>{{ $item->jawaban }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <div class="faq-item" data-category="Tracking">
+                        <h2 class="text-2xl font-bold mb-4">Tracking</h2>
+                        @foreach ($faqs->where('kategori', 'Tracking') as $item)
+                            <div>
+                                <button
+                                    class="w-full flex justify-between items-center text-left text-xl font-semibold py-2 transition-all duration-300"
+                                    onclick="toggleAnswer('{{ $item->id }}')">
+                                    <span>{{ $item->pertanyaan }}</span>
+                                    <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+                                </button>
+                                <div id="{{ $item->id }}" class="hidden text-gray-600">
+                                    <p>{{ $item->jawaban }}</p>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script>
+        function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            element.classList.toggle('hidden');
+            var icon = element.previousElementSibling.querySelector('i');
+            icon.classList.toggle('rotate-180');
+        }
+
+        function filterFAQ(category) {
+            var items = document.querySelectorAll('.faq-item');
+            items.forEach(item => {
+                if (item.getAttribute('data-category') === category || category === 'All') {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        }
+    </script>
+
+    <style>
+        .rotate-180 {
+            transform: rotate(180deg);
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .faq-item h2 {
+                font-size: 1.5rem;
+            }
+
+            .faq-item button {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .faq-item h2 {
+                font-size: 1.75rem;
+            }
+
+            .faq-item button {
+                font-size: 1.125rem;
+            }
+        }
+
+        /* Styling the button section to be more responsive */
+        @media (max-width: 768px) {
+            .w-full.md\\:w-auto.mb-6.md\\:mb-0.md\\:mr-8 {
+                margin-right: 0 !important;
+            }
+        }
+    </style>
+
+<!-- FOOTER -->
+<footer class="bg-gray-100 p-8 text-left">
         <div class="flex flex-col sm:flex-row items-start justify-between max-w-7xl mx-auto">
             <div class="flex flex-col items-start mb-4 sm:mb-0">
                 <div class="flex items-center">
@@ -256,7 +381,33 @@
                 <p>© 2024 Sistem Layanan SPBE, by Dinas komunikasi dan informatika Kota Pekalongan</p>
             </div>
     </footer>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    @vite('resources/js/app.js')
+@vite('resources/js/app.js')
+
+<script>
+function toggleAnswer(id) {
+            var element = document.getElementById(id);
+            element.classList.toggle('hidden');
+            var icon = element.previousElementSibling.querySelector('i');
+            icon.classList.toggle('rotate-180');
+        }
+
+    function filterFAQ(category) {
+        // Sembunyikan semua FAQ
+        document.querySelectorAll('.faq-item').forEach(function (item) {
+            item.style.display = 'none';
+        });
+
+        // Tampilkan FAQ yang sesuai dengan kategori
+        document.querySelectorAll('.faq-item[data-category="' + category + '"]').forEach(function (item) {
+            item.style.display = 'block';
+        });
+    }
+
+    // Tampilkan semua FAQ secara default
+    document.addEventListener('DOMContentLoaded', function() {
+        filterFAQ('Layanan'); // Atau ganti dengan kategori yang diinginkan secara default
+    });
+</script>
+
 </body>
 </html>

@@ -28,4 +28,18 @@
                             <label for="kategori" class="block text-sm font-medium text-gray-700">Kategori</label>
                             <select name="kategori" id="kategori" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option value="Layanan" {{ $faq->kategori == 'Layanan' ? 'selected' : '' }}>Layanan</option>
-                                <option value="Laporan" {{ $f
+                                <option value="Laporan" {{ $faq->kategori == 'Laporan' ? 'selected' : '' }}>Laporan</option>
+                                <option value="Umum" {{ $faq->kategori == 'Umum' ? 'selected' : '' }}>Umum</option>
+                            </select>
+                        </div>
+                        <div class="flex justify-end">
+                            <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Update
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</x-app-layout>

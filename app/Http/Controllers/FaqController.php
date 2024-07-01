@@ -16,7 +16,7 @@ class FaqController extends Controller
     } else {
         $faqs = Faq::all();
     }
-    return view('faq.faq', compact('faqs')); // Mengarahkan ke resources/views/faq/faq.blade.php
+    return view('users.faq.faq', compact('faqs')); // Mengarahkan ke resources/views/faq/faq.blade.php
     }
 
     // Metode untuk admin

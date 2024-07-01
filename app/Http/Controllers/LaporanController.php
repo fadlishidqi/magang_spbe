@@ -54,7 +54,7 @@ class LaporanController extends Controller
     // Metode untuk pengguna
     public function create()
     {
-        return view('laporan.index');
+        return view('users.laporan.create');
     }
 
     public function store(Request $request)
@@ -78,5 +78,11 @@ class LaporanController extends Controller
 
         return redirect()->route('laporan.create')->with('success', 'Laporan created successfully.');
     }
+
+    // Metode untuk menampilkan laporan pengguna
+    public function userIndex()
+    {
+        $laporans = Laporan::all();
+        return view('users.laporan.index', compact('laporans'));
+    }
 }
-    
