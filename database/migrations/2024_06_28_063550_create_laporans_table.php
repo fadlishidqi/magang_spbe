@@ -11,10 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('laporans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
-        });
+    Schema::create('laporans', function (Blueprint $table) {
+        $table->id();
+        $table->string('judul');
+        $table->date('tanggal');
+        $table->text('isi');
+        $table->string('kategori');
+        $table->string('file_pendukung')->nullable();
+        $table->timestamps();
+    });
     }
 
     /**

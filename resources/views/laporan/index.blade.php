@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha512-PoQgnD+vMxwXQf2nx5nQZQ3Hg1K6qT+ly6wTFBo1hApKsyw4iP29XSq0O0jZt4QKlVDkB7w64+GuA0jQ/o8cZA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     @vite('resources/css/app.css')
     <style>
         a {
@@ -87,7 +86,7 @@
                 <a href="#" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Layanan</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
-                <a href="{{ route('laporan.create') }}" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Pelaporan</a>
+                <a href="/laporan" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Pelaporan</a>
             </li>
             <li class="mx-4 my-6 md:my-0">
                 <a href="#" class="text-sm sm:text-xl hover:text-blue-500 duration-500 font-bold">Tracking</a>
@@ -163,50 +162,39 @@
         }
     </script>
 
-    <!-- CONTENT -->
-    <section class="relative bg-cover bg-center text-white text-center">
-        <img src="{{ asset('images/batik.png') }}" class="w-full h-full object-cover">
-        <div class="absolute inset-0 flex flex-col justify-center items-start text-white p-4 lg:p-20">
-            <h1 class="py-1 text-xl sm:text-xl md:text-2xl lg:text-6xl font-poppins font-bold">Manajemen Layanan</h1>
-            <h1 class="text-xl sm:text-xl md:text-2xl lg:text-6xl font-poppins font-bold">SPBE Kota Pekalongan</h1>
-            <p class="mt-2 sm:mt-2 md:mt-4 max-w-full text-xs xs:text-sm md:text-base lg:text-xl font-poppins font-normal text-left">Dinas Komunikasi dan Informatika Kota Pekalongan adalah Organisasi Perangkat Daerah yang dibentuk untuk menyelenggarakan urusan Pemerintahan bidang informasi dan komunikasi publik, bidang infrastruktur dan statistika, bidang aplikasi dan persandian.</p>
-        </div>
-    </section>
-
-    <!-- SEARCH BAR -->
-    <section class="my-8 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-        <div class="relative inline-block w-full max-w-xs sm:max-w-none sm:w-2/3 lg:w-2/3">
-            <input type="text" placeholder="Cari Layanan..." class="w-full p-2 pl-4 pr-12 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                <img src="{{ asset('images/search.png') }}" alt="Search Icon" class="w-5 h-5 text-gray-400">
-            </div>
-        </div>
-    </section>
-
-    <!-- CARD BUTTON -->
-    <section class="my-16 max-w-6xl mx-auto text-center">
-        <div class="flex flex-col md:flex-row md:space-x-16 space-y-4 md:space-y-0 items-center">
-            <a href="URL_Layanan" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/layanan.png') }}" alt="Layanan Icon" class="h-12 mb-10 mx-auto ml-2">
-                <div class="text-left sm:text-left">
-                    <h2 class="text-2xl font-bold font-poppins">Layanan</h2>
-                    <p class="mt-2 font-poppins">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
+    <!-- FORM PELAPORAN -->
+    <section class="container mx-auto mt-8">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow">
+            <h1 class="text-2xl font-bold mb-8">Sampaikan laporan</h1>
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
                 </div>
-            </a>
-            <a href="URL_Pelaporan" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/pelaporan.png') }}" alt="Pelaporan Icon" class="h-12 mb-10 mx-auto ml-2">
-                <div class="text-left sm:text-left">
-                    <h2 class="text-2xl font-bold font-poppins">Pelaporan</h2>
-                    <p class="mt-2 font-poppins">Ajukan keluhan dan tinjau Prosedur Operasional Standar (SOP) untuk layanan yang tersedia.</p>
+            @endif
+            <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="mb-3">
+                    <label for="judul" class="form-label">Judul laporan *</label>
+                    <input type="text" class="form-control" id="judul" name="judul" required>
                 </div>
-            </a>
-            <a href="URL_Tracking" class="card bg-white h-[300px] w-full md:w-[350px] lg:w-[400px] xl:w-[500px] p-8 rounded-xl shadow-lg mx-auto hover:shadow-2xl transition-shadow duration-300">
-                <img src="{{ asset('images/tracking.png') }}" alt="Tracking Icon" class="h-12 mb-10 mx-auto ml-2">
-                <div class="text-left sm:text-left">
-                    <h2 class="text-2xl font-bold font-poppins">Tracking</h2>
-                    <p class="mt-2 font-poppins">Lacak aduan yang telah dilakukan menggunakan tiket unik yang telah diberikan.</p>
+                <div class="mb-3">
+                    <label for="tanggal" class="form-label">Tanggal Pelaporan *</label>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" required>
                 </div>
-            </a>
+                <div class="mb-3">
+                    <label for="isi" class="form-label">Isi laporan *</label>
+                    <textarea class="form-control" id="isi" name="isi" rows="3" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="kategori" class="form-label">Kategori</label>
+                    <input type="text" class="form-control" id="kategori" name="kategori">
+                </div>
+                <div class="mb-3">
+                    <label for="file_pendukung" class="form-label">File Pendukung</label>
+                    <input type="file" class="form-control" id="file_pendukung" name="file_pendukung">
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
         </div>
     </section>
 

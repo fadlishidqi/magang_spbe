@@ -31,21 +31,21 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerate();
 
 
-        if (Auth::user()->hasRole('admin')) {
-            return redirect()->to('admin');
-        }
+        // if (Auth::user()->hasRole('admin')) {
+        //     return redirect()->to('admin');
+        // }
 
-        if (Auth::user()->hasRole('masyarakat')) {
-            return redirect()->to('masyarakat');
-        }
+        // if (Auth::user()->hasRole('masyarakat')) {
+        //     return redirect()->to('masyarakat');
+        // }
 
-        if (Auth::user()->hasRole('pegawai dinas')) {
-            return redirect()->to('pegawaiDinas');
-        }
+        // if (Auth::user()->hasRole('pegawai dinas')) {
+        //     return redirect()->to('pegawaiDinas');
+        // }
 
-        if (Auth::user()->hasRole('pegawai individu')) {
-            return redirect()->to('pegawaiIndividu');
-        }
+        // if (Auth::user()->hasRole('pegawai individu')) {
+        //     return redirect()->to('pegawaiIndividu');
+        // }
 
         return redirect()->intended(route('dashboard', absolute: false));
     }
