@@ -241,7 +241,7 @@
             </div>
         </div>
             <div class="mt-4">
-                <ul class="flex items-start space-x-4 ml-0 sm:ml-10">
+                <ul class="flex items-start space-x-4 ml-0 sm:ml-20">
                     <li>
                         <a href="#" class="text-2xl">
                             <ion-icon name="logo-facebook"></ion-icon>
