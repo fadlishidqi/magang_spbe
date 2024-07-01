@@ -9,6 +9,11 @@ export default {
         './resources/views/**/*.blade.php',
     ],
 
+    safelist: [
+        'top-[80px]',
+        'opacity-100'
+    ],
+
     theme: {
         extend: {
             fontFamily: {
