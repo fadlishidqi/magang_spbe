@@ -173,14 +173,22 @@
         </div>
     </section>
 
-    <!-- SEARCH BAR -->
-    <section class="my-8 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    <!-- GREETING -->
+    <section class="my-6 max-w-9xl mx-auto text-center px-4 sm:px-6 lg:px-8">
         <div class="relative inline-block w-full max-w-xs sm:max-w-none sm:w-2/3 lg:w-2/3">
-            <input type="text" placeholder="Cari Layanan..." class="w-full p-2 pl-4 pr-12 border rounded-full bg-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-            <div class="absolute inset-y-0 right-0 flex items-center pr-3">
-                <img src="{{ asset('images/search.png') }}" alt="Search Icon" class="w-5 h-5 text-gray-400">
-            </div>
+            <h1 class="py-1 sm:py-6 md:py-8 lg:py-10 text-xl sm:text-lg md:text-xl lg:text-4xl font-poppins font-bold">Selamat Datang</h1>
+            <p class="py-2 sm:py-1 md:py-2 lg:py-2 max-w-full text-xs xs:text-sm md:text-base lg:text-xl font-poppins font-normal">Portal resmi Manajemen Layanan SPBE Kota Pekalongan dirancang untuk memberikan kemudahan akses informasi dan layanan terkait administrasi pemerintahan dan layanan publik di Kota Pekalongan.</p>
         </div>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <section class="max-w-2xl mx-auto text-center justify-center px-4 py-2">
+        <form action="" class="w-full max-w-4xl px-10">
+            <div class="relative flex items-center text-gray-400 focus-within:text-gray-400">
+                <ion-icon class="w-5 h-5 absolute ml-3 pointer-events-none" name="search-outline"></ion-icon>
+                <input type="text" name="search" placeholder="Cari Layanan..." autocomplete="off" aria-label="Cari Layanan..." class="w-full max-w-full md:max-w-lg lg:max-w-xl xl:max-w-2xl pr-3 pl-10 py-2 font-regular font-poppins placeholder-gray-500 text-black rounded-full border-none ring-1 ring-gray-300 focus:ring-blue-600 focus:ring-2 hover:ring-blue-600 hover:ring-2">
+            </div>
+        </form>
     </section>
 
     <!-- CARD BUTTON -->

@@ -29,7 +29,7 @@
                             <select name="kategori" id="kategori" class="mt-1 block w-full py-2 px-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                                 <option value="Layanan" {{ $faq->kategori == 'Layanan' ? 'selected' : '' }}>Layanan</option>
                                 <option value="Laporan" {{ $faq->kategori == 'Laporan' ? 'selected' : '' }}>Laporan</option>
-                                <option value="Umum" {{ $faq->kategori == 'Umum' ? 'selected' : '' }}>Umum</option>
+                                <option value="Tracking" {{ $faq->kategori == 'Tracking' ? 'selected' : '' }}>Tracking</option>
                             </select>
                         </div>
                         <div class="flex justify-end">

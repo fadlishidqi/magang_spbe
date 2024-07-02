@@ -18,31 +18,25 @@
                     <table class="divide-y divide-gray-200 text-center w-full">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Judul</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Isi</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">File Pendukung</th>
-                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">ID</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Judul</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Isi</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Kategori</th>
+                                <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
                             </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
                             @foreach ($laporans as $laporan)
                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $laporan->id }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $laporan->judul }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $laporan->tanggal }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $laporan->isi }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">{{ $laporan->kategori }}</td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        @if ($laporan->file_pendukung)
-                                            <a href="{{ Storage::url($laporan->file_pendukung) }}" target="_blank">Download</a>
-                                        @endif
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">{{ $laporan->id }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">{{ $laporan->judul }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">{{ $laporan->tanggal }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">{{ $laporan->isi }}</td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-center">{{ $laporan->kategori }}</td>
+                
+                                    <td class="px-6 py-4 whitespace-nowrap text-center text-sm font-medium">
                                         <a href="{{ route('laporan.show', $laporan->id) }}" class="text-blue-600 hover:text-blue-800">View</a>
-                                        <a href="{{ route('laporan.edit', $laporan->id) }}" class="text-yellow-600 hover:text-yellow-800 ml-2">Edit</a>
                                         <form action="{{ route('laporan.destroy', $laporan->id) }}" method="POST" style="display:inline;">
                                             @csrf
                                             @method('DELETE')
